@@ -16,7 +16,9 @@ public class EnemyMeleeMovement : EnemyMovement
         Vector3 direction = targetTransform.position - transform.position;
         direction.y = 0;
         direction = direction.normalized;
-        rb.velocity = direction * speed;
+        direction = direction * speed;
+        direction.y = rb.velocity.y;
+        rb.velocity = direction;
     }
 
 

@@ -6,6 +6,8 @@ public class EnemyMovement : Movement
 {
     protected override void Move()
     {
-        rb.velocity = transform.forward * speed;
+        Vector3 move = transform.forward * speed;
+        move.y = rb.velocity.y;
+        rb.velocity = move ;
     }
 }
